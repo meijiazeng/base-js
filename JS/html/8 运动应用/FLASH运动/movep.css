@@ -1,0 +1,147 @@
+body{
+	background: #666;
+}
+ul{
+	padding: 0;
+	margin: 0;
+}
+li{
+	list-style: none;
+}
+img{
+	border: 0;
+}
+.play{
+	width: 400px;
+	height: 430px;
+	margin: 50px auto 0;
+	background: #999999;
+	font: 12px Arial;
+}
+.big_pic{
+	width: 400px;
+	height: 320px;
+	overflow: hidden;
+	border-bottom: 1px solid #CCCCCC;
+	background: #222;
+	position: relative;
+}
+.big_pic li{
+	width: 400px;
+	height: 320px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	background:  no-repeat url(image/loading.jpg)l center center ;
+}
+/* 左边感应按钮出现的容器*/
+.mark_left{
+	width: 200px;
+	height: 320px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: red;
+	filter: alpha(opacity:0);
+	opacity: 0;
+	z-index: 3000;
+}
+/* 右边感应按钮出现的容器*/
+.mark_right{
+	width: 200px;
+	height: 320px;
+	position: absolute;
+	left: 200px;
+	top: 0;
+	background: green;
+	filter: alpha(opacity:0);
+	opacity: 0;
+	z-index: 3000;
+}
+/* 左按钮----Begin---*/
+.big_pic .prev{
+	width: 60px;
+	height: 60px;
+	background: url(image/left.gif) no-repeat;
+	position: absolute;
+	top: 130px;
+	left: 10px;
+	z-index: 3001;
+	filter: alpha(opacity:0);
+	opacity: 0;
+	cursor: pointer;
+	/* 设定网页浏览时用户鼠标指针的样式  （鼠标的图形形状）  pointer  手指的样式 */
+}
+/* 左按钮----End---*/
+/* 右按钮----Begin-----*/
+.big_pic .next{
+	width: 60px;
+	height: 60px;
+	background: url(image/right.gif) no-repeat;
+	position: absolute;
+	top: 130px;
+	right: 10px;
+	z-index: 3001;
+	filter: alpha(opacity:0);
+	opacity: 0;
+	/*background: red;*/
+	cursor: pointer;
+}
+.big_pic .text{
+	position: absolute;
+	left: 10px;
+	top: 302px;
+	z-index: 3000;
+	color: #CCCCCC;
+}
+.big_pic .length{
+	position: absolute;
+	right: 10px;
+	bottom: 4px ;
+	z-index: 3000;
+	color: #CCCCCC;
+}
+.big_pic .bg{
+	width: 400px;
+	height: 25px;
+	background: #000000;
+	filter: alpha(opacity=60);
+	opacity: 0.6;
+	position: absolute;
+	z-index: 2999;
+	bottom: 0;
+	left: 0;
+}
+/* 右按钮----End-----*/
+/* small---Begin----*/
+.small_pic{
+	width: 380px;
+	height: 94px;
+	position: relative;
+	top: 7px;
+	left: 10px;
+	overflow: hidden;
+	/*防止内容溢出容器*/
+}
+.small_pic ul{
+	height: 94px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.small_pic li{
+	width: 120px;
+	height: 94px;
+	float: left;
+	padding-right: 10px;
+	background: url(image/loading.jpg) no-repeat center center;
+	cursor: pointer;
+	filter: alpha(opacity=60);
+	opacity: 0.6;
+}
+.small_pic img{
+	width: 120px;
+	height: 94px;
+}

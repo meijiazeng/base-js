@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			// 插入元素 
+			//    insertBefore(节点，原有节点) 在已有元素前插入
+			window.onload=function()
+			{
+				var oTxt = document.getElementById('txt1');
+				var oBtn = document.getElementById('btn1');
+				var oUl = document.getElementById('ull');
+				oBtn.onclick=function()
+				{
+					var oLi = document.createElement('li');
+					var aLi = oUl.getElementsByTagName('li');
+					oLi.innerHTML=oTxt.value;
+					if(aLi.length>0)
+					{
+						oUl.insertBefore(oLi,aLi[0]);
+					}
+					else{
+						oUl.appendChild(oLi);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="txt1" />
+		<input type="button" id="btn1" value="按钮"/>
+		<ul id="ull"></ul>
+	</body>
+</html>

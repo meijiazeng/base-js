@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			//基本类型
+			//  当基本类型作为函数的参数的时候，函数内部对参数的修改，不会修改外部的变量
+			function f1(a){
+				a=100;
+			}
+			var x=1;
+			f1(x);
+			console.log(x);
+			
+			
+			
+			
+			function Student(name,age,salary){
+				this.name = name;
+				this.age = age;
+				this.salary = salary;
+			}
+			// 复杂类型
+			//  复杂类型作为函数的参数  参数内部对参数的修改  会影响外部变量
+			function f2(stu){
+				stu.name="xxx";
+			}
+			var s = new Student("jiji", 18, 100);
+			f2(s);
+			console.log(s.name);
+			
+			
+			function f3(arr){
+				arr[0] = -100;
+			}
+			var array = [3,5,6,7];
+			f3[array];
+			console.log(array); 
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

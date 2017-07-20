@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			// JSON   的属性必须要用双引号引起
+			var json = {a:12, b:5, c:7};
+			var arr = [12,5,7];
+			
+			alert(json['a']);
+			// json的下标是字符串
+			alert(arr[0]);
+			// 数组的下标是数字
+			
+			alert(arr.length);
+			alert(json.length);
+			// 数组有length  但是json没有length
+			
+			// 循环
+			for(var i=0;i<arr.length;i++)
+			{
+				alert('第'+i+'个东西：'+arr[i]);
+			}
+			
+			for(var i in json)
+			{
+				alert('第'+i+'个东西：'+arr[i]);
+			}
+			
+			// 都可以使用for in 但是最好 Json还是配合 for in ，数组配合length.
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

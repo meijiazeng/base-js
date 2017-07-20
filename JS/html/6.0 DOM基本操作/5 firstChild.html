@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			//  首位子节点的兼容问题
+			window.onload=function()
+			{
+				var oUl = document.getElementById('ull');
+				
+				// 处理高级浏览器的兼容问题
+				if(oUl.firstElementChild)
+				{
+					oUl.firstElementChild.style.background='red';
+				}
+				else{
+					oUl.firstChild.style.background='red';
+					// 处理比较低版本的浏览器兼容问题
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="ull">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload=function()
+			{
+				var oBtn = document.getElementById('btn1');
+				var oUl1 = document.getElementById('ul1');
+				var oUl2 = document.getElementById('ul2');
+				oBtn.onclick=function()
+				{
+					var aLi = oUl1.children[0];
+//					oUl1.removeChild(aLi);
+					oUl2.appendChild(aLi);
+					// appendChild 1 先把元素从原有父级上删掉  2. 添加到新的元素
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+		<input type="button" id="btn1" value="傻鸡鸡" />
+		<ul id="ul2"></ul>
+	</body>
+</html>

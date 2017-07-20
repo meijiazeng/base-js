@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1
+			{
+				width: 100px;
+				height: 150px;
+				background: red;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
+		</style> 
+		<script>
+//			body元素的scrollTop指的是超出“浏览器窗口上边界”的内容的高度
+			window.onscroll=function()
+			{
+				var oDiv = document.getElementById('div1');
+				var scrollTop = document.documentElement.scrollTop||document.body.scrollTop;
+				//       为了兼容浏览器
+				startMove(document.documentElement.clientHeight-oDiv.offsetHeight+scrollTop);
+				//  clientHeight 可视区的高度  -  当前的div高度  +   浏览器窗口上边界  
+				// 这就是我们要拿到的目标高度
+				
+			}
+			var timer = null;
+			function startMove(iTarger)
+			{
+				var oDiv = document.getElementById('div1');
+				clearInterval(timer);
+				timer=setInterval(function(){
+					var speed = (iTarger-oDiv.offsetTop)/6;
+					//   （目标值-当前值）/频率
+					if(oDiv.offsetTop==iTarger)
+					{
+						clearInterval(timer);
+					}
+					else
+					{
+						oDiv.style.top=oDiv.offsetTop+speed+'px';
+					}
+				},30)
+				
+			}
+		</script>
+	</head>
+	<body style="height: 2000px;">
+		<div id="div1"></div>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{
+				height: 200px;
+				background: red;
+				border: 1px solid black;
+			}
+		</style>
+		<script>
+			function getStyle(obj,name)
+			{
+				if(obj.currentStyle)
+				{
+					return obj.currentStyle[name];
+					//  兼容ie的浏览器
+				}
+				else
+				{
+					return getComputedStyle(obj,false)[name];
+					//  兼容谷歌其他的浏览器
+				}
+			}
+			setInterval(function(){
+				var oDiv = document.getElementById('div1');
+				oDiv.style.width=parseInt(getStyle(oDiv,'width'))-1+'px';
+			}, 30)
+		</script>
+	</head>
+	<body>
+		<div id="div1" style="width: 200px;"></div>
+	</body>
+</html>

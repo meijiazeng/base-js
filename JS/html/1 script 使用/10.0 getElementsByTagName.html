@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/* 提取事件，为元素增加属性， 使结构、样式、行为三者分离*/
+			/* getElementsByTagName() 获取一组元素*/
+			div{
+				width: 200px;
+				height: 200px;
+				border: 1px solid gray;
+				float: left;
+			}
+		</style>
+		<script>
+			//window.onload 在加载完所有的页面之后执行这个代码，防止出错
+			window.onload=function(){
+				var aDiv = document.getElementsByTagName('div');
+				aDiv[0].style.background="green";
+			}
+		</script>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

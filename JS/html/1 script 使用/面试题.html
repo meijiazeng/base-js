@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		1.0	
+			 //解析器:
+			 //全局作用域   预解析   找 var  function  和 参数
+			     //var a;
+			 	// function  f1()
+			//一行一行执行代码
+				//a=18;
+				// f1();
+				// f1的作用域
+					// 预解析
+					//var b;
+					//var a;
+					//一行一行执行代码	 
+					    //b=9;
+					    //真正执行的过程顺序如下
+					    var a;
+					    function f1(){
+					    	var b;
+					    	var a;
+					    	b=9;
+					    	console.log(a);
+					    	console.log(b);
+					    	a='123';
+					    }
+					    
+			  
+			var a = 18;
+			f1();
+			function f1()
+			{
+				var b = 9;
+				console.log(a);
+				console.log(b);
+				var a = '123';
+			}
+			
+			
+			
+			
+			2.0 
+			
+			//  首先预解析 
+			    //   var fnName
+			    	//console.log (fnName(1,2));
+			    	  //  因为fnName没有值         所以not a function
+			    	// fnName=function(a,b){
+			    	//	return a+b;
+			    	//}
+			
+			
+			
+			console.log(fnName(1,2));
+			var fnName = function(a,b)
+			{
+				return a+b;
+			};
+			
+			3.0
+			// 解析器
+			// 全局作用域   预解析  var    function 参数
+			 	//预解析
+			 		//function f1()
+			 	//  一行一行执行代码
+			 		//f1()局部作用域
+			 			//预解析
+			 				//var a;  变量声明会被提升到作用域的前面，变量的赋值不会提升
+			 			//一行一行执行代码
+//			 			最后结果是 9,9,9,9,9  还有就是not a undefined  因为a是局部变量,跳出了f1 就没有值了
+			 			
+			 //function f1()
+			 //   a局部变量
+			 //   b,c  全局变量  
+//			{
+//				var a;
+//				a=b=c=9;
+//				console.log(a);
+//				console.log(b);
+//				console.log(c);
+//			}
+			//console.log(c);
+			//console.log(b);
+			//console.log(a);
+			
+			
+			
+			
+			f1();
+			console.log(c);
+			console.log(b);
+			console.log(a);
+			function f1()
+			{
+				var a=b=c=9;
+				console.log(a);
+				console.log(b);
+				console.log(c);
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

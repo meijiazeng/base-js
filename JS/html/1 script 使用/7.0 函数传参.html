@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{
+				width: 200px;
+				height: 200px;
+				background: gray;
+			}
+		</style>
+		<script>
+			//function setColor(自己喜欢定义都可以)
+			function setColor(color){
+				var oDiv = document.getElementById('div1');
+				oDiv.style.background = color;
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="变红" onclick="setColor('red');"/>
+		<input type="button" value="变绿" onclick="setColor('green');"/>
+		<input type="button" value="变黄" onclick="setColor('yellow');"/>
+		<div id="div1"></div>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function add(e){
+     
+        var container = document.getElementById('content');
+        var text = document.getElementById(e).innerHTML;
+        var newNode = document.createElement("span");
+        newNode.innerHTML = text;
+        container.appendChild(newNode);
+        
+        var ui =document.getElementById(e);
+        ui.style.visibility="hidden";
+         
+        // 加上这段就可以了
+            newNode.onclick = function(){
+                container.removeChild(this);
+                ui.style.visibility="visible";
+            }
+            add(a);
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

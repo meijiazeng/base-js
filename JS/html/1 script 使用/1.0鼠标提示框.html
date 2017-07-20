@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{
+				width: 200px;
+				height: 100px;
+				background: gray;
+				border: 1px solid #999999;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- onmouseover（事件） 设置鼠标经过的样式
+			onmouseout 设置鼠标离开的样式
+		-->
+		<input type="checkbox" onmouseover="document.getElementById('div1').
+			style.display='block';" onmouseout="document.getElementById('div1').
+			style.display='none';"/>
+		<div id="div1">
+			请注意您的信息安全！
+		</div>
+	</body>
+</html>

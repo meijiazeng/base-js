@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				border: 1px solid gray;
+				margin: 10px;
+				float: left;
+			}
+		</style>
+		<script>
+			// 使用For循环实现多个div颜色的填充 
+			window.onload=function(){
+				var aDiv = document.getElementsByTagName('div');
+				for (var i=0;i<5;i++){
+					aDiv[i].style.background="green";
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>

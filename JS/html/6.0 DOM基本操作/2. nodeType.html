@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			window.onload=function()
+			{
+				var oUl = document.getElementById('ull');
+				for(var i=0;i<oUl.childNodes.length;i++)
+				{
+					//  文本节点=====nodeType = 3
+					//   元素节点====nodeType = 1
+					alert(oUl.childNodes[i].nodeType);
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="ull">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		lllllll
+		<span>shabi</span>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function toDou(n)
+			{
+				if(n<10){
+					return '0'+n;
+				}
+				else{
+					return ' '+n;
+				}
+			}
+			window.onload=function()
+			{
+				var oDate = new Date;
+				var str = toDou(oDate.getHours())+toDou(oDate.getMinutes())
+				+toDou(oDate.getSeconds());
+				alert(str);
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

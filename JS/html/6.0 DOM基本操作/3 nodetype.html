@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			//  利用自身的父节点设置样式
+			window.onload=function()
+			{
+				var aA = document.getElementsByTagName('a');
+				for(var i=0;i<aA.length;i++)
+				{
+					aA[i].onclick=function()
+					{
+						this.parentNode.style.display = 'none';
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="ull">
+			<li>12345<a href="#">隐藏</a></li>
+			<li>日日日法人<a href="#">隐藏</a></li>
+			<li>鹅鹅鹅的<a href="#">隐藏</a></li>
+			<li>rrrrr<a href="#">隐藏</a></li>
+			<li>ggggg<a href="#">隐藏</a></li>
+		</ul>
+	</body>
+</html>

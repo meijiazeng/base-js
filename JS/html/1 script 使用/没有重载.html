@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			//   重载：函数的名字相同，但是参数个数不同  但是js没有
+//			下面的相同名称的函数会把上面相同的函数覆盖
+			function f1 (a,b)
+			{
+				return a+b;
+			}
+			function f1(a,b,c)
+			{
+				return a+b+c;
+			}
+			
+			
+			///  就近原则 会选择最近的那个函数
+			console.log(f1(1,2));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

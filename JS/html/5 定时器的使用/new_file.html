@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				float: left;
+				margin: 10px;
+			}
+			#div1{
+				width: 50px;
+				height: 50px;
+				background: red;
+			}
+			#div2{
+				width: 500px;
+				height: 450px;
+				background: gray;
+				display: none;
+			}
+		</style>
+		<script>
+			// 移入到红色区域 显示灰色界面，移入灰色界面依然显示，所以去掉定时
+			// 移除红色区域定时500毫秒隐藏灰色界面，移出灰色界面，500毫秒后隐藏灰色界面
+			window.onload=function()
+			{
+				var oDiv1 = document.getElementById('div1');
+				var oDiv2 = document.getElementById('div2');
+				var timer = null;
+				oDiv2.onmouseover=oDiv1.onmouseover=function()
+				{
+					clearTimeout(timer);
+					timer=oDiv2.style.display='block';
+				}
+				
+				oDiv2.onmouseout=oDiv1.onmouseout=function(){
+					timer=setTimeout(function(){
+						oDiv2.style.display='none';
+					}, 500);
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<div id="div2"></div>
+	</body>
+</html>

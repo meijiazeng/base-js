@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload=function()
+			{
+				var oBtn = document.getElementById('btn1');
+				var oUl1 = document.getElementById('ul1');
+				oBtn.onclick=function()
+				{
+					var aLi = document.getElementsByTagName('li');
+					var arr=[];
+					for(var i=0;i<aLi.length;i++)
+					{
+						arr[i]=aLi[i];
+					}
+					arr.sort(function(li1,li2){
+						var a1 = parseInt(li1.innerHTML);
+						var a2 = parseInt(li2.innerHTML);
+						return a1-a2;
+					});
+					for(var i=0;i<arr.length;i++)
+					{
+						oUl1.appendChild(arr[i]);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" id="btn1" value="傻鸡鸡排序" />
+		<ul id="ul1">
+			<li>95</li>
+			<li>32</li>
+			<li>24</li>
+			<li>4</li>
+			<li>10</li>
+		</ul>
+		
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			// 父级.removeChild（子节点）  删除一个节点
+			window.onload=function()
+			{
+				var oUl = document.getElementById('ull');
+				var aA = document.getElementsByTagName('a');
+				for(var i=0;i<aA.length;i++)
+				{
+					aA[i].onclick=function()
+					{
+						oUl.removeChild(this.parentNode);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="ull">
+			<li>sssss<a href="#">删除</a></li>
+			<li>rtr<a href="#">删除</a></li>
+			<li>56565<a href="#">删除</a></li>
+			<li>sssss<a href="#">删除</a></li>
+			<li>rtr<a href="#">删除</a></li>
+			<li>rtrt<a href="#">删除</a></li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/* parentNode 不会改变，除非大改动*/
+			/*offsetParent    获取元素在页面上的实际位置
+			 * 根据内容的结构会有所改变，
+			 *例如 如果父元素没有相对位置，那么父节点会改变为body*/
+			#div1{
+				width: 200px;
+				height: 200px;
+				background: gray;
+				margin: 100px;
+				position: relative;
+			}
+			#div2{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				left: 50px;
+				top: 50px;
+			}
+		</style>
+		<script>
+			window.onload=function()
+			{
+				var oDiv2 = document.getElementById('div2');
+				alert(oDiv2.offsetParent);
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<div id="div2"></div>
+		</div>
+	</body>
+</html>

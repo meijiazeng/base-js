@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload=function()
+			{
+				var oBtn1 = document.getElementById('btn1');
+				var oBtn2 = document.getElementById('btn2');
+				var timer = null;
+				
+				oBtn1.onclick=function()
+				{
+					// 里面放置一个设置定时开启的函数
+					timer=setInterval(function(){
+						alert('a');
+					}, 2000);
+				}
+				oBtn2.onclick=function()
+				{
+					// 在设置一个清除定时的函数
+					clearInterval(timer);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input id="btn1" type="button" value="开启" />
+		<input id="btn2" type="button" value="关闭" />
+	</body>
+</html>

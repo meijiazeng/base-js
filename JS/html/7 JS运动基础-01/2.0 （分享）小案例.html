@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{
+				width: 150px;
+				height: 200px;
+				background: deeppink;
+				position: absolute;
+				left: -150px;
+			}
+			#div1 span{
+				position: absolute;
+				width: 20px;
+				height: 60px;
+				line-height: 20px;
+				background: deepskyblue;
+				right: -20px;
+				top: 70px;
+			}
+		</style>
+		<script>
+			window.onload=function()
+			{
+				var oDiv = document.getElementById('div1');
+				oDiv.onmouseover=function()
+				{
+					startMove(0);
+					//   在鼠标移入的时候，就要弹出去  那么div的左边距当然是0
+				}
+				oDiv.onmouseout=function()
+				{
+					//  当鼠标移出来的时候，那么div隐藏回归本身位置
+					startMove(-150);
+				}
+			}
+			var timer = null;
+			function startMove(iTarget)
+			{
+				var oDiv = document.getElementById('div1');
+				var speed=0;
+				clearInterval(timer);
+				timer=setInterval(function(){
+					if(oDiv.offsetLeft>iTarget)
+					//  当div 的位置大于本身的目标位置时候，就要减
+					{
+						speed=-10;
+					}
+					
+					else
+					{
+						speed=10;
+					}
+					
+					if(oDiv.offsetLeft==iTarget)
+					{
+						clearInterval(timer);
+						// 当位置移到了目标位置 就可以关闭定时器
+					}
+					else
+					{
+						oDiv.style.left=oDiv.offsetLeft+speed+'px';
+						//  移动
+					}
+				},30)
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<span>分享到</span>
+		</div>
+	</body>
+</html>

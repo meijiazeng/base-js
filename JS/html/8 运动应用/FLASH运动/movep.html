@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>仿FLASH的图片轮换效果</title>
+		<link rel="stylesheet" type="text/css" href="movep.css"/>
+		<script type="text/javascript" src="movep.js"></script>
+	</head>
+	<body>
+		<div id="playimages" class="play">
+			<ul class="big_pic">
+				<div class="prev"></div>
+				<!--左边按钮  右边按钮-->
+				<div class="next"></div>
+
+				<div class="text">加载图片说明</div>
+				<div class="length">计算图片数量</div>
+				
+				<a class="mark_left" href="#"></a>
+				<!--  感应左右边的按钮的div -->
+				<a class="mark_right" href="#"></a>
+				<div class="bg"></div>
+				
+				<li style="z-index: 1;"><img src="image/1.jpg"/></li>
+				<li><img src="image/2.jpg" alt="2" /></li>
+				<li><img src="image/3.jpg" alt="3" /></li>
+				<li><img src="image/4.jpg" alt="4" /></li>
+				<li><img src="image/5.jpg" alt="5" /></li>
+				<li><img src="image/6.jpg" alt="6" /></li>
+			</ul>
+			<div class="small_pic">
+				<ul style="width: 390px;">
+					<li style="filter: 100; opacity: 1;"><img src="image/1.jpg" /></li>
+					<li><img src="image/2.jpg" alt="2" /></li>
+					<li><img src="image/3.jpg" alt="3" /></li>
+					<li><img src="image/4.jpg" alt="4" /></li>
+					<li><img src="image/5.jpg" alt="5" /></li>
+					<li><img src="image/6.jpg" alt="6" /></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

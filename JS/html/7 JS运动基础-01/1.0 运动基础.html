@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{
+				width: 200px;
+				height: 200px;
+				background: red;
+				position: absolute;
+				top: 50px;
+				left: 0px;
+		</style>
+		<script>
+			var timer = null;
+			function startMove()
+			{
+				var oDiv = document.getElementById('div1');
+				
+				clearInterval(timer);
+				//  首先先要把上一次的定时器关闭才能执行下一次，否则就会执行很多次；
+				//  因为每按一次 就会执行一次定时器  都会叠加
+				timer=setInterval(function(){
+					var speed = 10;
+					
+					//  当我们取值有时候会跳过300 所以改成>=300 例如速度为7 就会跳过300 	
+					if(oDiv.offsetLeft>=300)
+					{
+						clearInterval(timer);
+						//  到达终点后就关闭定时器
+					}
+					else
+					{
+						oDiv.style.left=oDiv.offsetLeft+speed+'px';
+						//  没有到达终点时继续运动
+					}
+				},30)
+			}
+		</script>
+	</head>
+	<body>
+		<input id="btn1" type="button" value="开始运动" 
+			onclick="startMove()" />
+			<div id="div1"></div>
+	</body>
+</html>

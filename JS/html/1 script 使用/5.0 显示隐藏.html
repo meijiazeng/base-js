@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/* 设置一个简单的显示隐藏元素*/
+			#div1{
+				width: 200px;
+				height: 200px;
+				background: red;
+				display: none;
+			}
+			
+		</style>
+		<script>
+			// 当按钮按下就显示div元素，再次按钮按下就隐藏元素
+			function show(){
+				var get = document.getElementById('div1');
+				if(get.style.display == 'block'){
+					get.style.display = 'none';
+				}
+				else{
+					get.style.display = 'block';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="按钮" onclick="show()"/>
+		<div id="div1"></div>
+	</body>
+</html>

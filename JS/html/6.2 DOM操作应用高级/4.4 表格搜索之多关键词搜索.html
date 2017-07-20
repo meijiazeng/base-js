@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload=function()
+			{
+				var oTab = document.getElementById('tab1');
+				var oBtn = document.getElementById('btn1');
+				var oTxt = document.getElementById('name');
+				oBtn.onclick=function()
+				{
+					for(var i=0;i<oTab.tBodies[0].rows.length;i++)
+					{
+						var sTab = oTab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase();
+						// 把body中的行所有内容转换为小写
+						var sTxt = oTxt.value.toLowerCase();
+						//   把用户输入的内容全部转换为小写
+						var arr = sTxt.split(' ');
+						//  把用户输入的内容以空格为基准剪切
+						oTab.tBodies[0].rows[i].style.background='';
+						// 初始化行背景为没有
+						
+						for(var j=0;j<arr.length;j++)
+						//  循环剪切出来的长度
+						{
+							if(sTab.search(arr[j])!=-1)
+							//   剪切出来的东西在内容里面查找，如果不等于-1意味着可以找到这个元素
+							{
+								oTab.tBodies[0].rows[i].style.background='green';
+								// 当找到这个元素就把背景设为绿色
+							}
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+	姓名：<input id="name" type="text" />
+		<input id="btn1" type="button" value="搜索" />
+		<table id="tab1" border="1" width="500px">
+			<thead>
+				<td>ID</td>
+				<td>姓名</td>
+				<td>年龄</td>
+				<td>操作</td>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>张三</td>
+					<td>12</td>
+					<td></td>
+				<tr>
+					<td>2</td>
+					<td>李四</td>
+					<td>22</td>
+					<td></td>
+				<tr>
+					<td>3</td>
+					<td>王五</td>
+					<td>16</td>
+					<td></td>
+				<tr>
+					<td>4</td>
+					<td>张伟</td>
+					<td>56</td>
+					<td></td>
+				<tr>
+					<td>4</td>
+					<td>王四</td>
+					<td>56</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
+
+
+

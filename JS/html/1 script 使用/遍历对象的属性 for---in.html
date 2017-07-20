@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			
+			//    for ... in遍历对象的属性或者方法
+			var obj={};
+//			var o = new Object();
+			for(var i=0;i<10;i++)
+			{
+				obj[i]=i*2;
+			}
+				for(var key in obj){
+				console.log(key+"=="+obj[key]);
+				//         属性名               属性值
+
+
+
+			var o = {
+				name : "jiji",
+				age : 18,
+				sex : "未知",
+				salary : 100,
+				dog : {},
+				cats : [],
+				sayHi:function(){
+					console.log("大家好，我是"+this.name);
+				}
+			}
+//			
+			for(var key in o){
+//				console.log(key);
+//				console.log(o.key);
+//  			获取对象的key属性  因为key属性未定义  输出underfined
+				
+				console.log(o[key]);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload=function()
+			{
+				var oTab = document.getElementById('tab1');
+				var oName = document.getElementById('name');
+				var oAge = document.getElementById('age');
+				var oBtn = document.getElementById('btn1');
+				var id = oTab.tBodies[0].rows.length+1;
+				// 设置每一次加一
+				
+				oBtn.onclick=function()
+				{
+					var oTr = document.createElement('tr');
+					
+					var oTd = document.createElement('td');
+					oTd.innerHTML=id++;
+					//  执行完后自加 避免删除一个id 后来又重复同一个id
+					oTr.appendChild(oTd);
+					
+					var oTd = document.createElement('td');
+					oTd.innerHTML=oName.value;
+					oTr.appendChild(oTd);
+					
+					var oTd = document.createElement('td');
+					oTd.innerHTML=oAge.value;
+					oTr.appendChild(oTd);
+					
+					var oTd = document.createElement('td');
+					oTd.innerHTML="<a href='#'>删除</a>";
+					oTr.appendChild(oTd);
+					
+					oTd.getElementsByTagName('a')[0].onclick=function()
+					{
+						oTab.tBodies[0].removeChild(this.parentNode.parentNode);
+						// 要删除的这一行的父类       一定不能忘记tBodies   removerChild(a的父类)
+						// 当点击按钮的时候，执行删除一行
+					}
+					
+					oTab.tBodies[0].appendChild(oTr);
+				}
+			}
+		</script>
+	</head>
+	<body>
+	姓名：<input id="name" type="text" />
+	年龄：<input id="age" type="text"/>
+		<input id="btn1" type="button" value="添加" />
+		<table id="tab1" border="1" width="500px">
+			<thead>
+				<td>ID</td>
+				<td>姓名</td>
+				<td>年龄</td>
+				<td>删除</td>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>Blue</td>
+					<td>12</td>
+					<td></td>
+				<tr>
+					<td>2</td>
+					<td>Yellow</td>
+					<td>22</td>
+					<td></td>
+				<tr>
+					<td>3</td>
+					<td>att</td>
+					<td>16</td>
+					<td></td>
+				<tr>
+					<td>4</td>
+					<td>green</td>
+					<td>56</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+</html>
+
+
+

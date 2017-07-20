@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			var arr = [12,52,69,85,2,9,4];
+			
+			arr.sort(function (n1,n2)
+			{
+				// 更加简化的 与下面的结果都是一样的
+				return n1-n2;
+				//
+//				if(n1<n2)
+//				{
+//					return -1;
+//					//  这里可以返回任何负数，只要是负数 ，都可以
+//				}
+//				else if(n1>n2)
+//				{
+//					return 1;
+//					//  这里可以返回正数，只要是正数都可以
+//				}
+//				else{
+//					return 0;
+//				}
+			})
+			alert(arr);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

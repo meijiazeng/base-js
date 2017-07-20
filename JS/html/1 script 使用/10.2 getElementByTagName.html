@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				border: 1px solid gray;
+				margin: 10px;
+				float: left;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var aDiv = document.getElementsByTagName('div');
+				// aDiv.length 让他的程度随着元素的多少自动增加减少，
+				for (var i=0;i<aDiv.length;i++){
+					aDiv[i].style.background="green";
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>
+

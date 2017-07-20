@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				margin: 20px;
+				float: left;
+				background: red;
+				border: 1px solid black;
+				filter: alpha(opacity:30);
+				opacity: 0.3;
+			}
+		</style>
+		<script>
+			window.onload=function()
+			{
+				var oDiv = document.getElementById('div1');
+				oDiv.onmouseover=function()
+				{
+					startMove(this, 'opacity', 100);
+				}
+				oDiv.onmouseout=function()
+				{
+					startMove(this, 'opacity', 30);
+				}
+			}
+			function getStyle(obj,name)
+			{
+				if(obj.currentStyle)
+				{
+					return obj.currentStyle[name];
+					
+				}
+				else
+				{
+					return getComputedStyle(obj,false)[name];				}
+			}
+			function startMove(obj, attr, iTarget)
+			{
+				clearInterval(obj.timer);
+				obj.timer=setInterval(function()
+				{
+					var cur=0;
+					if(attr=='opacity')
+					{
+						cur=Math.round(parseFloat(getStyle(obj,attr))*100);
+						//  因为透明度是小于1，所以当取整的时候，就会等于没有透明度 所要乘以100.比较保险
+					}
+					else
+					{
+						cur=parseInt(getStyle(obj,attr));
+					}
+					
+					var speed=(iTarget-cur)/6;
+					speed=speed>0?Math.ceil(speed):Math.floor(speed);
+					if(cur==iTarget)
+					{
+						clearInterval(obj.timer);
+					}
+					else
+					{
+						if(attr=='opacity')
+						//  透明度就会应用这个
+						{
+							obj.style.filter='alpha(opacity:'+(cur+speed)+')';
+							obj.style.opacity=(cur+speed)/100;
+							document.getElementById('txt1').value=obj.style.opacity;
+						}
+						else
+						//   其他的就会应用这个 透明度就不会有px
+						{
+							obj.style[attr]=cur+speed+'px';
+						}
+						
+					}
+				}, 30);
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<input type="text" id="txt1" />
+	</body>
+</html>

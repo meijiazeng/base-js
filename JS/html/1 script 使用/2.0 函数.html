@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{
+				width: 200px;
+				height: 200px;
+				color: gray;
+				border: 1px solid green;
+				background: purple;
+			}
+			
+		</style>
+		<script>
+			// 通过 function 函数能够使页面更加地简洁  tored是函数名， 自己取
+			function tored(){
+				document.getElementById('div1').style.background='red';
+				document.getElementById('div1').style.height='400px';
+				document.getElementById('div1').style.width='400px';
+			}
+			function topurple(){
+				document.getElementById('div1').style.background='purple';
+				document.getElementById('div1').style.height='200px';
+				document.getElementById('div1').style.width='200px';
+			}
+		</script>
+	</head>
+	<body>
+		<!-- 想使用直接调用这个函数就行-->
+		<div id="div1" onmouseover="tored()" onmouseout="topurple()">
+			
+		</div>
+	</body>
+</html>

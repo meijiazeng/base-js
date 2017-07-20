@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+//			全局作用域  在任何位置都可以访问（在script中的变量）
+//			var name = "a";
+//			console.log(name);
+//			
+//			
+//			function f1()
+//			{
+//				console.log(name);
+//			}
+//			f1();
+			
+			
+//		局部作用域:在函数内部声明一个变量,只能在该函数内部使用
+			function f1()
+			{
+				var name="aaa";
+				console.log(name);
+			}
+			f1();
+			
+			console.log(name);
+//			当变量超出作用域之后,变量会被销毁
+//				不使用var 声明的变量是全局变量
+
+
+			if(true)
+			{
+				var name="abc";
+			}
+			
+			console.log(name);
+			//  js没有块级作用域
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

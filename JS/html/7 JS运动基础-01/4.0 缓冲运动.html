@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div1{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				left: 0px;
+				top: 50px;
+			}
+			#div2
+			{
+				width: 1px;
+				height: 300px;
+				position: absolute;
+				left: 300px;
+				top: 0;
+				background: black;
+			}
+		</style>
+		<script>
+			function startMove()
+			{
+				var oDiv = document.getElementById('div1');
+				setInterval(function(){
+					var speed = (300-oDiv.offsetLeft)/10;
+					// 速度 =（目标值-当前值）/缩放系数
+					
+//					speed=Math.ceil(speed);    向上取整 
+//					speed=Math.floor(speed);   向下取整
+
+					speed=speed>0?Math.ceil(speed):Math.floor(speed);
+					// 取整  当速度大于0的时候就向下取整，小于0的时候向上取整
+					// 如果忘记取整一定会有误差
+
+					oDiv.style.left=oDiv.offsetLeft+speed+'px';
+				}, 30)
+				//   速度由距离决定 但距离越远速度越快，距离越近，速度越慢
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="开始运动" onclick="startMove()" />
+		<div id="div1"></div>
+		<div id="div2"></div>
+	</body>
+</html>

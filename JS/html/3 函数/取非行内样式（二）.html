@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		<style>
+			#div1{
+				width: 200px;
+				height: 200px;
+				background: red;
+			}
+		</style>
+		<script>
+			//   比前面的比较简洁 ，直接定义，然后想要的话直接引入
+			function getStyle(obj,name)
+			{
+				if(obj.currentStyle)
+				{
+					return obj.currentStyle[name];
+				}
+				else{
+					return getComputedStyle(obj,false)[name];
+				}
+			}
+			window.onload=function()
+			{
+				var oDiv = document.getElementById('div1');
+//				alert(getStyle(oDiv,'width'));
+				alert(getStyle(oDiv,'backgroundColor'));
+				//  如果里面放background 是不能获取的到 因为他不能获取复合样式
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1"></div>
+	</body>
+</html>
